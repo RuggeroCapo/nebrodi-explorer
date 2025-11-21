@@ -76,7 +76,7 @@ const NewsDetail = () => {
         return (
             <div className="min-h-screen bg-background">
                 <Header />
-                <main className="container mx-auto px-4 py-8 max-w-4xl">
+                <main className="container mx-auto px-4 pt-24 sm:pt-28 pb-8 max-w-4xl">
                     <div className="text-center">
                         <h1 className="text-2xl font-bold mb-4">Article Not Found</h1>
                         <Link to="/news" className="text-primary hover:underline">
@@ -92,7 +92,7 @@ const NewsDetail = () => {
         <div className="min-h-screen bg-background">
             <Header />
 
-            <main className="container mx-auto px-4 py-8 max-w-4xl">
+            <main className="container mx-auto px-4 pt-24 sm:pt-28 pb-8 max-w-4xl">
                 {/* Back Button */}
                 <Link
                     to="/news"

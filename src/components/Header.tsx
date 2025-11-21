@@ -9,7 +9,9 @@ export const Header = () => {
 
   // Pages with white backgrounds need dark navbar
   const whiteBackgroundPages = ['/partners', '/news', '/puntate'];
-  const isDarkNav = whiteBackgroundPages.includes(location.pathname);
+  const isDarkNav = whiteBackgroundPages.includes(location.pathname) ||
+    location.pathname.startsWith('/news/') ||
+    location.pathname.startsWith('/event/');
 
   return (
     <>
