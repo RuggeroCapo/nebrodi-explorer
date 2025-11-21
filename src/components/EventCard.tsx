@@ -1,4 +1,4 @@
-import { Calendar, MapPin } from "lucide-react";
+
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -11,49 +11,42 @@ interface EventCardProps {
   featured?: boolean;
 }
 
-export const EventCard = ({ 
-  image, 
-  title, 
-  location, 
-  date, 
-  category, 
-  featured = false 
+export const EventCard = ({
+  image,
+  title,
+  location,
+  date,
+  category,
+  featured = false
 }: EventCardProps) => {
   return (
-    <Card className="group cursor-pointer overflow-hidden border-border hover:shadow-lg transition-all duration-300 bg-card">
-      <div className="relative aspect-[4/3] overflow-hidden">
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-        />
-        {featured && (
-          <Badge className="absolute top-3 left-3 bg-primary text-primary-foreground">
-            In evidenza
-          </Badge>
-        )}
+    <Card className="group cursor-pointer overflow-hidden border-white/40 hover:border-white/60 hover:shadow-2xl transition-all duration-500 bg-white/60 backdrop-blur-xl rounded-[2rem]">
+      <div className="p-3">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] shadow-sm group-hover:shadow-md transition-all duration-500">
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        </div>
       </div>
-      
-      <div className="p-4 space-y-3">
-        <div className="flex items-start justify-between gap-2">
-          <h3 className="font-semibold text-lg text-foreground line-clamp-2 flex-1">
+
+      <div className="px-6 pb-6 pt-2 space-y-4">
+        <div className="space-y-2">
+          <h3 className="font-serif text-2xl text-foreground line-clamp-2 group-hover:text-primary transition-colors duration-300">
             {title}
           </h3>
-        </div>
-        
-        <div className="space-y-2">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <MapPin className="w-4 h-4 flex-shrink-0" />
-            <span className="line-clamp-1">{location}</span>
-          </div>
-          
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Calendar className="w-4 h-4 flex-shrink-0" />
-            <span>{date}</span>
+
+          <div className="flex flex-col gap-1 text-sm text-muted-foreground/80 font-medium">
+            <span className="flex items-center gap-1">
+              {location}
+            </span>
+            <span className="text-muted-foreground/60">{date}</span>
           </div>
         </div>
 
-        <Badge variant="secondary" className="bg-accent text-accent-foreground">
+        <Badge variant="secondary" className="bg-white/50 hover:bg-white/80 text-foreground/80 backdrop-blur-sm border border-white/20 transition-colors duration-300">
           {category}
         </Badge>
       </div>

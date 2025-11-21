@@ -1,50 +1,30 @@
 import { Header } from "@/components/Header";
-import { Handshake, ExternalLink } from "lucide-react";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 
 const partners = [
   {
-    id: 1,
-    name: "Parco dei Nebrodi",
-    description: "Ente Parco Regionale dei Nebrodi, custode del patrimonio naturalistico dell'area protetta.",
-    website: "parcodeinebrodi.it",
-    category: "Istituzionale",
+    name: "RTP",
+    logo: "https://www.nebroditour.it/wp-content/uploads/elementor/thumbs/RTP2-r2b6yqov0atma3ml4r5yh98iubqb703z8fqbiryel8.png",
+    url: "https://rtp.gazzettadelsud.it/",
   },
   {
-    id: 2,
-    name: "Pro Loco Cesarò",
-    description: "Associazione per la promozione del territorio e delle tradizioni locali di Cesarò.",
-    website: "prolocoCesaro.it",
-    category: "Associazioni",
+    name: "TGS",
+    logo: "https://www.nebroditour.it/wp-content/uploads/elementor/thumbs/Logo-TGS-r2b6fg24pqepy9nkswwnsmivuku26oic8xmhvakcbg.png",
+    url: "https://tgs.gds.it/",
   },
   {
-    id: 3,
-    name: "Ristorante Il Focolare",
-    description: "Cucina tradizionale nebroidea con prodotti tipici locali e stagionali.",
-    website: "ristoranteilfocolare.com",
-    category: "Ristorazione",
+    name: "Gazzetta del Sud",
+    logo: "https://www.nebroditour.it/wp-content/uploads/elementor/thumbs/Gazzetta3-r2b7pz2j0i3one2j40xu7vuaf7i57b80n85r2dksbg.png",
+    url: "https://gazzettadelsud.it/",
   },
   {
-    id: 4,
-    name: "Agriturismo Monte Soro",
-    description: "Ospitalità autentica ai piedi del Monte Soro, con vista mozzafiato sui Nebrodi.",
-    website: "agriturismoMontesoro.it",
-    category: "Ospitalità",
+    name: "BrunoBike",
+    logo: "https://www.nebroditour.it/wp-content/uploads/elementor/thumbs/BIKE--r2b7ppo545qtfag6mwvkiy7ohcsh2c6p9xmw9lyq1o.png",
+    url: "https://www.facebook.com/p/SSD-BrunoBike-100076401246649/",
   },
   {
-    id: 5,
-    name: "Guide Naturalistiche Nebrodi",
-    description: "Escursioni guidate, trekking e attività outdoor alla scoperta dei Monti Nebrodi.",
-    website: "guidenebrodi.com",
-    category: "Turismo",
-  },
-  {
-    id: 6,
-    name: "Consorzio Suino Nero",
-    description: "Consorzio di tutela e valorizzazione del Suino Nero dei Nebrodi DOP.",
-    website: "suinonero-nebrodi.it",
-    category: "Produttori",
+    name: "Gruppo Bruno",
+    logo: "https://www.nebroditour.it/wp-content/uploads/2025/03/gruppo-bruno.png",
+    url: "https://www.gruppobruno.it/",
   },
 ];
 
@@ -52,64 +32,26 @@ const Partners = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main className="container mx-auto px-4 py-12">
-        <div className="max-w-6xl mx-auto">
-          {/* Header */}
-          <div className="mb-12 text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
-              <Handshake className="w-8 h-8 text-primary" />
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              I Nostri Partners
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Collaboriamo con le migliori realtà del territorio per promuovere 
-              e valorizzare i Monti Nebrodi e le sue tradizioni.
-            </p>
-          </div>
+        <h1 className="text-3xl font-bold mb-8">Partners</h1>
 
-          {/* Partners Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {partners.map((partner) => (
-              <Card key={partner.id} className="p-6 hover:shadow-lg transition-shadow bg-card border-border">
-                <div className="space-y-4">
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex-1">
-                      <div className="inline-block px-3 py-1 bg-accent text-accent-foreground text-xs font-medium rounded-full mb-3">
-                        {partner.category}
-                      </div>
-                      <h3 className="text-xl font-bold text-foreground mb-2">
-                        {partner.name}
-                      </h3>
-                      <p className="text-muted-foreground mb-4">
-                        {partner.description}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <Button variant="outline" className="w-full justify-between group">
-                    <span>{partner.website}</span>
-                    <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </div>
-              </Card>
-            ))}
-          </div>
-
-          {/* CTA Section */}
-          <div className="mt-16 text-center p-8 bg-accent rounded-lg border border-border">
-            <h2 className="text-2xl font-bold text-foreground mb-3">
-              Vuoi diventare partner?
-            </h2>
-            <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-              Se rappresenti un'attività, un'associazione o un ente che opera nel territorio 
-              dei Nebrodi, contattaci per collaborare insieme.
-            </p>
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-              Contattaci
-            </Button>
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+          {partners.map((partner) => (
+            <a
+              key={partner.name}
+              href={partner.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center p-6 border border-gray-300 hover:border-gray-400 transition-colors"
+            >
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                className="max-w-full h-auto max-h-24 object-contain"
+              />
+            </a>
+          ))}
         </div>
       </main>
     </div>

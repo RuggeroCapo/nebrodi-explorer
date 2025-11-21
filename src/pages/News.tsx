@@ -1,52 +1,81 @@
 import { Header } from "@/components/Header";
-import { Newspaper, Calendar, ArrowRight } from "lucide-react";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import sagraImage from "@/assets/sagra-suino.jpg";
-import argimuscoImage from "@/assets/argimusco.jpg";
-import jazzImage from "@/assets/jazz-festival.jpg";
+import { Link } from "react-router-dom";
 
-const news = [
+const newsData = [
   {
-    id: 1,
-    title: "Nuovo sentiero inaugurato al Lago Biviere",
-    excerpt: "Un percorso naturalistico di 5km permette ora di esplorare completamente il perimetro del lago, con punti panoramici mozzafiato.",
-    date: "15 Maggio 2024",
-    category: "Territorio",
-    image: argimuscoImage,
-    featured: true,
+    id: 2419,
+    title: "19/10 – Alcara Li Fusi",
+    date: "19 Novembre, 2025",
+    categories: ["Alcara Li Fusi", "Eventi", "Ottobre 2025"],
+    excerpt: "Domenica 19 Ottobre, presso il Salone San Giovanni di Alcara Li Fusi, si è svolta la...",
+    url: "/news/2419",
   },
   {
-    id: 2,
-    title: "Sagra del Suino Nero: record di presenze",
-    excerpt: "Oltre 5000 visitatori hanno partecipato all'edizione 2023 della sagra più amata dei Nebrodi, degustando prodotti tipici e specialità locali.",
-    date: "12 Maggio 2024",
-    category: "Eventi",
-    image: sagraImage,
+    id: 2416,
+    title: "15/10 – Galati M.",
+    date: "19 Novembre, 2025",
+    categories: ["Eventi", "Ottobre 2025"],
+    excerpt: "Galati Mamertino ha illuminato le sue notti con un evento inedito e suggestivo: la \"Notte...",
+    url: "/news/2416",
   },
   {
-    id: 3,
-    title: "Jazz Festival conferma le date estive",
-    excerpt: "Annunciato il programma del festival jazz che animerà Capo d'Orlando per tre serate di musica di qualità.",
-    date: "8 Maggio 2024",
-    category: "Musica",
-    image: jazzImage,
+    id: 2414,
+    title: "25/10 – S.Salvatore di F.",
+    date: "19 Novembre, 2025",
+    categories: ["Eventi", "Ottobre 2025", "San Salvatore di Fitalia"],
+    excerpt: "San Salvatore di Fitalia ha celebrato nel weekend la prima edizione di \"Fitalia in Fiore\"...",
+    url: "/news/2414",
   },
   {
-    id: 4,
-    title: "Nasce il Consorzio della Provola dei Nebrodi",
-    excerpt: "Produttori locali si uniscono per tutelare e promuovere il famoso formaggio tipico della zona.",
-    date: "3 Maggio 2024",
-    category: "Enogastronomia",
-    image: sagraImage,
+    id: 2404,
+    title: "30/10 – Mirto",
+    date: "19 Novembre, 2025",
+    categories: ["Eventi", "Mirto", "Ottobre 2025"],
+    excerpt: "Si è svolta Venerdì' 7 Novembre, presso la Sala delle Capriate del Palazzo Cupane di Mirto, la decima tappa dell'iniziativa culturale \"I...",
+    url: "/news/2404",
   },
   {
-    id: 5,
-    title: "Scoperta archeologica all'Argimusco",
-    excerpt: "Nuovi ritrovamenti confermano l'importanza storica del sito megalitico siciliano.",
-    date: "28 Aprile 2024",
-    category: "Cultura",
-    image: argimuscoImage,
+    id: 2396,
+    title: "19/10 – S. Agata Militello",
+    date: "19 Novembre, 2025",
+    categories: ["Eventi", "Ottobre 2025", "Sant'Agata Militello"],
+    excerpt: "Domenica 19 ottobre alle ore 17:30, il Castello Gallego di Sant'Agata Militello ospiterà la presentazione del romanzo...",
+    url: "/news/2396",
+  },
+  {
+    id: 2357,
+    title: "23/11 – Capo d'Orlando",
+    date: "17 Novembre, 2025",
+    categories: ["Capo d'Orlando", "Eventi", "Novembre 2025"],
+    excerpt: "Domenica 23 novembre, alle ore 17, la splendida cornice di Villa Piccolo a Capo d'Orlando...",
+    url: "/news/2357",
+  },
+  {
+    id: 2335,
+    title: "13/10 – Naso",
+    date: "8 Novembre, 2025",
+    categories: ["Eventi", "Naso", "Ottobre 2025"],
+    excerpt: "Lunedì 13 Ottobre (ore 10-13, Book Shop del Teatro Vittorio Emanuele) ci sarà un incontro...",
+    url: "/news/2335",
+    image: "https://placehold.co/400x500/e2e8f0/64748b?text=Naso",
+  },
+  {
+    id: 2330,
+    title: "09/11 – Ficarra",
+    date: "8 Novembre, 2025",
+    categories: ["Eventi", "Ficarra", "Novembre 2025"],
+    excerpt: "Si terrà Domenica 9 Novembre alle ore 16:30, presso la storica Casa della Memoria Giuseppe Tomasi di Lampedusa di Ficarra...",
+    url: "/news/2330",
+    image: "https://placehold.co/400x600/e2e8f0/64748b?text=Ficarra",
+  },
+  {
+    id: 2326,
+    title: "12/08 – Acquedolci",
+    date: "8 Novembre, 2025",
+    categories: ["Acquedolci", "Agosto 2025", "Eventi"],
+    excerpt: "L'evento viene organizzato dal Comune di Acquedolci, con il patrocinio della Regione Siciliana, e la collaborazione dell'Associazione Mediterraneo e...",
+    url: "/news/2326",
+    image: "https://placehold.co/300x400/e2e8f0/64748b?text=Acquedolci",
   },
 ];
 
@@ -54,92 +83,51 @@ const News = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
-      <main className="container mx-auto px-4 py-12">
-        <div className="max-w-6xl mx-auto">
-          {/* Header */}
-          <div className="mb-12 text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
-              <Newspaper className="w-8 h-8 text-primary" />
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              News e Aggiornamenti
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Resta aggiornato su eventi, novità e iniziative che animano 
-              il territorio dei Monti Nebrodi.
-            </p>
-          </div>
 
-          {/* Featured Article */}
-          {news[0].featured && (
-            <Card className="mb-12 overflow-hidden hover:shadow-lg transition-shadow bg-card border-border">
-              <div className="grid md:grid-cols-2 gap-0">
-                <div className="aspect-video md:aspect-auto relative overflow-hidden">
-                  <img
-                    src={news[0].image}
-                    alt={news[0].title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                
-                <div className="p-8 flex flex-col justify-center">
-                  <div className="inline-block px-3 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full mb-4 w-fit">
-                    In Evidenza
-                  </div>
-                  <h2 className="text-3xl font-bold text-foreground mb-4">
-                    {news[0].title}
-                  </h2>
-                  <p className="text-muted-foreground mb-6 text-lg">
-                    {news[0].excerpt}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Calendar className="w-4 h-4" />
-                      <span>{news[0].date}</span>
+      <main className="container mx-auto px-4 py-8 max-w-4xl">
+        {/* Simple Header */}
+        <div className="mb-8 border-b pb-4">
+          <h1 className="text-3xl font-bold mb-2">Nebrodi Tour News</h1>
+        </div>
+
+        {/* News List - Minimal Design */}
+        <div className="space-y-6">
+          {newsData.map((article) => (
+            <Link key={article.id} to={article.url}>
+              <div className="border-b pb-6 hover:bg-accent/5 transition-colors cursor-pointer p-4 -mx-4">
+                <div className="flex gap-4">
+                  {article.image && (
+                    <div className="flex-shrink-0">
+                      <img
+                        src={article.image}
+                        alt={article.title}
+                        className="w-24 h-24 object-cover bg-muted"
+                      />
                     </div>
-                    <Button variant="ghost" className="group">
-                      Leggi di più
-                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
+                  )}
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold mb-2 hover:text-primary transition-colors">
+                      {article.title}
+                    </h3>
+                    <div className="text-sm text-muted-foreground mb-2">
+                      {article.date}
+                    </div>
+                    <div className="text-sm text-muted-foreground mb-2">
+                      {article.categories.join(", ")}
+                    </div>
+                    <p className="text-muted-foreground text-sm">
+                      {article.excerpt}
+                    </p>
+                    <div className="mt-2">
+                      <span className="text-sm text-primary hover:underline">
+                        Read More →
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </Card>
-          )}
-
-          {/* News Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {news.slice(1).map((article) => (
-              <Card key={article.id} className="overflow-hidden hover:shadow-lg transition-shadow bg-card border-border group cursor-pointer">
-                <div className="aspect-video relative overflow-hidden">
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute top-3 left-3">
-                    <span className="px-3 py-1 bg-accent text-accent-foreground text-xs font-medium rounded-full">
-                      {article.category}
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="p-6 space-y-4">
-                  <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                    {article.title}
-                  </h3>
-                  <p className="text-muted-foreground">
-                    {article.excerpt}
-                  </p>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Calendar className="w-4 h-4" />
-                    <span>{article.date}</span>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
+            </Link>
+          ))}
         </div>
       </main>
     </div>

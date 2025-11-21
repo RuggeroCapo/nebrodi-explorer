@@ -2,35 +2,44 @@ import { Header } from "@/components/Header";
 import { Play, Clock } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import heroImage from "@/assets/nebrodi-hero.jpg";
+
 
 const episodes = [
   {
     id: 1,
-    title: "Il Suino Nero dei Nebrodi",
-    description: "Un viaggio alla scoperta della tradizione dell'allevamento del maiale nero, simbolo gastronomico dei Nebrodi.",
-    duration: "28:45",
+    title: "Città di Naso",
+    description: "Un piccolo borgo, a strapiombo sul mare, che trasuda di storia e cultura. Uno straordinario percorso naturalistico che porta alla \"Grotta del diavolo\" ma anche la sentita fede nei confronti del santo patrono, San Cono. La sua storia, i suoi miracoli e la cripta con la grotta dove il monaco è stato rinvenuto senza vita.",
+    duration: "30:00",
     season: 1,
     episode: 1,
-    image: heroImage,
+    image: "https://placehold.co/600x400",
   },
   {
     id: 2,
-    title: "I Megaliti dell'Argimusco",
-    description: "Esploriamo il sito archeologico più misterioso della Sicilia, conosciuto come la Stonehenge siciliana.",
-    duration: "32:10",
+    title: "Capo d'Orlando",
+    description: "Visitiamo insieme una delle mete turistiche più rinomate della Sicilia. Un mare fantastico, un paesaggio mozzafiato e grande tradizione eno gastronomica e dolciaria. Tra porto e Villa Piccolo un viaggio meraviglioso che strizza l'occhio anche al passato.",
+    duration: "30:00",
     season: 1,
     episode: 2,
-    image: heroImage,
+    image: "https://placehold.co/600x400",
   },
   {
     id: 3,
-    title: "Le Tradizioni di San Fratello",
-    description: "Un tuffo nelle antiche usanze e nei dialetti lombardi ancora parlati in questo borgo montano.",
-    duration: "25:30",
+    title: "Tortorici",
+    description: "Tra storia e cultura, gli antichi mestieri del centro oricense, con particolare attenzione agli importanti musei dedicati alla fotografia, alla raccolta di testi del 500 e all'antropologia. Storici e amministratori raccontano Tortorici e il suo incredibile patrimonio artistico.",
+    duration: "30:00",
     season: 1,
     episode: 3,
-    image: heroImage,
+    image: "https://placehold.co/600x400",
+  },
+  {
+    id: 4,
+    title: "S. Salvatore di Fitalia",
+    description: "Arte, cultura, tradizione ed eccellenze enogastronomiche raccontate attraverso la descrizione del museo diffuso all'aperto e quello dedicato alla tradizione religiosa siciliana. Panorami mozzafiato tra natura e sport, con la \"Rocca di Pietra Giuda\" e le mountain bike in giro per il territorio.",
+    duration: "30:00",
+    season: 1,
+    episode: 4,
+    image: "https://placehold.co/600x400",
   },
 ];
 
@@ -38,7 +47,7 @@ const Puntate = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main className="container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -50,7 +59,7 @@ const Puntate = () => {
               Le Puntate
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Guarda le nostre puntate dedicate ai tesori nascosti dei Monti Nebrodi. 
+              Guarda le nostre puntate dedicate ai tesori nascosti dei Monti Nebrodi.
               Storie, tradizioni e paesaggi mozzafiato.
             </p>
           </div>
@@ -72,7 +81,7 @@ const Puntate = () => {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="flex-1 p-6 space-y-4">
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
@@ -89,7 +98,7 @@ const Puntate = () => {
                         </p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Clock className="w-4 h-4" />
                       <span>{episode.duration}</span>
