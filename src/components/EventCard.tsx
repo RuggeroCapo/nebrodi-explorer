@@ -1,5 +1,4 @@
-import { Calendar, MapPin, Heart } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Calendar, MapPin } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -28,13 +27,6 @@ export const EventCard = ({
           alt={title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
-        <Button
-          variant="ghost"
-          size="icon"
-          className="absolute top-3 right-3 bg-card/90 hover:bg-card rounded-full"
-        >
-          <Heart className="w-4 h-4" />
-        </Button>
         {featured && (
           <Badge className="absolute top-3 left-3 bg-primary text-primary-foreground">
             In evidenza
