@@ -3,7 +3,7 @@ import { Header } from "@/components/Header";
 import { EventCard } from "@/components/EventCard";
 import { MapView } from "@/components/MapView";
 import { SearchPill, SearchFilters } from "@/components/SearchPill";
-import heroImage from "@/assets/nebrodi-hero.png";
+import heroImage from "@/assets/nebrodi-hero.avif";
 import { events } from "@/data/events";
 import { X } from "lucide-react";
 
