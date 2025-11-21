@@ -51,10 +51,10 @@ export const Header = () => {
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-[100] md:hidden animate-in fade-in duration-300">
+        <div className="fixed inset-0 z-[100] md:hidden">
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-black/80"
+            className="absolute inset-0 bg-gray-900/80 backdrop-blur-xl animate-in fade-in duration-300"
             onClick={() => setMobileMenuOpen(false)}
           />
 
