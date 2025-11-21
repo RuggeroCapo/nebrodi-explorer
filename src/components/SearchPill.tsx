@@ -77,15 +77,15 @@ export const SearchPill = ({ onSearch }: SearchPillProps) => {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-4">
-      <div className="flex items-center bg-white/25 backdrop-blur-2xl border border-white/30 rounded-full shadow-lg hover:shadow-xl transition-shadow" style={{ backdropFilter: "blur(20px)" }}>
+    <div className="w-full max-w-4xl mx-auto">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center bg-white/25 backdrop-blur-2xl border border-white/30 rounded-2xl sm:rounded-full shadow-lg hover:shadow-xl transition-shadow overflow-hidden" style={{ backdropFilter: "blur(20px)" }}>
         {/* Location */}
         <Popover>
           <PopoverTrigger asChild>
-            <button className="flex-1 flex flex-col items-start px-6 py-4 hover:bg-white/20 rounded-l-full transition-colors">
+            <button className="flex-1 flex flex-col items-start px-4 sm:px-6 py-3 sm:py-4 hover:bg-white/20 rounded-t-2xl sm:rounded-t-none sm:rounded-l-full transition-colors min-w-0">
               <span className="text-xs font-semibold text-foreground">Dove</span>
-              <span className="text-sm text-muted-foreground">
-                {selectedLocation || "Cerca destinazioni"}
+              <span className="text-xs sm:text-sm text-muted-foreground truncate w-full">
+                {selectedLocation || "Cerca nei comuni"}
               </span>
             </button>
           </PopoverTrigger>
@@ -104,14 +104,15 @@ export const SearchPill = ({ onSearch }: SearchPillProps) => {
           </PopoverContent>
         </Popover>
 
-        <div className="w-px h-8 bg-white/20" />
+        <div className="hidden sm:block w-px h-8 bg-white/20" />
+        <div className="sm:hidden w-full h-px bg-white/20" />
 
         {/* Date */}
         <Popover>
           <PopoverTrigger asChild>
-            <button className="flex-1 flex flex-col items-start px-6 py-4 hover:bg-white/20 transition-colors">
+            <button className="flex-1 flex flex-col items-start px-4 sm:px-6 py-3 sm:py-4 hover:bg-white/20 transition-colors min-w-0">
               <span className="text-xs font-semibold text-foreground">Quando</span>
-              <span className="text-sm text-muted-foreground">
+              <span className="text-xs sm:text-sm text-muted-foreground truncate w-full">
                 {selectedDate ? selectedDate.toLocaleDateString("it-IT") : "Aggiungi date"}
               </span>
             </button>
@@ -126,14 +127,15 @@ export const SearchPill = ({ onSearch }: SearchPillProps) => {
           </PopoverContent>
         </Popover>
 
-        <div className="w-px h-8 bg-white/20" />
+        <div className="hidden sm:block w-px h-8 bg-white/20" />
+        <div className="sm:hidden w-full h-px bg-white/20" />
 
         {/* Category */}
         <Popover>
           <PopoverTrigger asChild>
-            <button className="flex-1 flex flex-col items-start px-6 py-4 hover:bg-white/20 transition-colors">
+            <button className="flex-1 flex flex-col items-start px-4 sm:px-6 py-3 sm:py-4 hover:bg-white/20 transition-colors min-w-0">
               <span className="text-xs font-semibold text-foreground">Eventi</span>
-              <span className="text-sm text-muted-foreground">
+              <span className="text-xs sm:text-sm text-muted-foreground truncate w-full">
                 {selectedCategory || "Sagre, Arte, Musica..."}
               </span>
             </button>
@@ -155,7 +157,7 @@ export const SearchPill = ({ onSearch }: SearchPillProps) => {
 
         {/* Search / Clear Button */}
         <button
-          className={`m-2 w-12 h-12 rounded-full flex items-center justify-center transition-colors ${showClear
+          className={`m-2 sm:m-2 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center transition-colors flex-shrink-0 ${showClear
               ? "bg-red-500 hover:bg-red-600"
               : "bg-primary hover:bg-primary/90"
             }`}
@@ -163,9 +165,9 @@ export const SearchPill = ({ onSearch }: SearchPillProps) => {
           aria-label={showClear ? "Clear filters" : "Search"}
         >
           {showClear ? (
-            <X className="w-5 h-5 text-white" />
+            <X className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
           ) : (
-            <Search className="w-5 h-5 text-primary-foreground" />
+            <Search className="w-4 h-4 sm:w-5 sm:h-5 text-primary-foreground" />
           )}
         </button>
       </div>

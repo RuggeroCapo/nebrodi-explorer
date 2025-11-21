@@ -31,7 +31,7 @@ export const MapView = () => {
   ];
 
   return (
-    <div className="sticky top-24 h-[calc(100vh-8rem)] rounded-2xl overflow-hidden shadow-sm">
+    <div className="sticky top-24 h-[calc(100vh-8rem)] rounded-2xl overflow-hidden shadow-sm relative">
       <MapContainer
         center={nebrodiCenter}
         zoom={10}
@@ -61,6 +61,12 @@ export const MapView = () => {
           </Marker>
         ))}
       </MapContainer>
+      {/* Overlay with demo text */}
+      <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none h-full">
+        <div className="h-full w-full flex items-center justify-center text-4xl font-bold text-white/10">
+          demo demo demo demo demo demo demo demo demo demo
+        </div>
+      </div>
     </div>
   );
 };
