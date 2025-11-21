@@ -11,7 +11,7 @@ export const Header = () => {
   const whiteBackgroundPages = ['/partners', '/news', '/puntate'];
   const isDarkNav = whiteBackgroundPages.includes(location.pathname) ||
     location.pathname.startsWith('/news/') ||
-    location.pathname.startsWith('/event/');
+    location.pathname.startsWith('/events/');
 
   return (
     <>
