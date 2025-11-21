@@ -123,10 +123,10 @@ const Index = () => {
       </section>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 pt-16 pb-8">
-        <div className="flex gap-8">
+      <main className="max-w-screen-2xl mx-auto px-6 pt-12 pb-8">
+        <div className="flex flex-col lg:flex-row gap-8">
           {/* Events Grid */}
-          <div className="flex-1">
+          <div className="w-full lg:w-[60%]">
             <div className="mb-6">
               <h2 className="text-2xl font-bold text-foreground mb-2">
                 Esperienze da vivere
@@ -136,7 +136,7 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredEvents.map((event) => (
                 <EventCard key={event.id} {...event} />
               ))}
@@ -144,7 +144,7 @@ const Index = () => {
           </div>
 
           {/* Desktop Map */}
-          <div className="hidden xl:block w-[40%]">
+          <div className="hidden lg:block lg:w-[40%]">
             <MapView />
           </div>
         </div>

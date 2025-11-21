@@ -4,7 +4,7 @@ import { NavLink } from "@/components/NavLink";
 export const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-white/75 backdrop-blur-xl border-b border-white/30 shadow-sm">
-      <div className="container mx-auto px-4">
+      <div className="max-w-screen-2xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">

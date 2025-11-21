@@ -31,7 +31,7 @@ export const MapView = () => {
   ];
 
   return (
-    <div className="sticky top-24 h-[calc(100vh-8rem)] rounded-lg overflow-hidden border border-border shadow-sm">
+    <div className="sticky top-24 h-[calc(100vh-8rem)] rounded-2xl overflow-hidden shadow-sm">
       <MapContainer
         center={nebrodiCenter}
         zoom={10}

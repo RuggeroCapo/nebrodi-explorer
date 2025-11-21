@@ -22,7 +22,7 @@ export const EventCard = ({
   return (
     <Card className="group cursor-pointer overflow-hidden border-white/40 hover:border-white/60 hover:shadow-2xl transition-all duration-500 bg-white/60 backdrop-blur-xl rounded-[2rem]">
       <div className="p-3">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] shadow-sm group-hover:shadow-md transition-all duration-500">
+        <div className="relative aspect-[3/2] overflow-hidden rounded-[1.5rem] shadow-sm group-hover:shadow-md transition-all duration-500">
           <img
             src={image}
             alt={title}
@@ -32,8 +32,12 @@ export const EventCard = ({
         </div>
       </div>
 
-      <div className="px-6 pb-6 pt-2 space-y-4">
+      <div className="px-6 pb-6 pt-2 space-y-3">
         <div className="space-y-2">
+          <Badge variant="secondary" className="bg-white/50 hover:bg-white/80 text-foreground/80 backdrop-blur-sm border border-white/20 transition-colors duration-300 mb-2">
+            {category}
+          </Badge>
+
           <h3 className="font-serif text-2xl text-foreground line-clamp-2 group-hover:text-primary transition-colors duration-300">
             {title}
           </h3>
@@ -45,10 +49,6 @@ export const EventCard = ({
             <span className="text-muted-foreground/60">{date}</span>
           </div>
         </div>
-
-        <Badge variant="secondary" className="bg-white/50 hover:bg-white/80 text-foreground/80 backdrop-blur-sm border border-white/20 transition-colors duration-300">
-          {category}
-        </Badge>
       </div>
     </Card>
   );
