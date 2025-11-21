@@ -61,12 +61,6 @@ export const MapView = () => {
           </Marker>
         ))}
       </MapContainer>
-      {/* Overlay with demo text */}
-      <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none h-full">
-        <div className="h-full w-full flex items-center justify-center text-4xl font-bold text-white/10">
-          demo demo demo demo demo demo demo demo demo demo
-        </div>
-      </div>
     </div>
   );
 };
