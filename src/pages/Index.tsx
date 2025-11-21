@@ -6,68 +6,7 @@ import { SearchPill, SearchFilters } from "@/components/SearchPill";
 import { Button } from "@/components/ui/button";
 import { Map } from "lucide-react";
 import heroImage from "@/assets/nebrodi-hero.png";
-
-const events = [
-  {
-    id: 1,
-    image: "https://placehold.co/600x400",
-    title: "Sagra del Suino Nero dei Nebrodi",
-    location: "Cesarò, Messina",
-    date: "15 Ottobre 2024",
-    category: "Sagre",
-    featured: true,
-  },
-
-  {
-    id: 3,
-    image: "https://placehold.co/600x400",
-    title: "Jazz Festival Costa Tirrenica",
-    location: "Capo d'Orlando",
-    date: "20 Luglio 2024",
-    category: "Musica",
-  },
-  {
-    id: 4,
-    image: "https://placehold.co/600x400",
-    title: "Festa della Provola dei Nebrodi",
-    location: "San Fratello",
-    date: "5 Settembre 2024",
-    category: "Enogastronomia",
-  },
-
-  {
-    id: 6,
-    image: "https://placehold.co/600x400",
-    title: "Festival dell'Arte Contemporanea",
-    location: "Mistretta",
-    date: "1-3 Giugno 2024",
-    category: "Arte",
-  },
-  {
-    id: 7,
-    image: "https://placehold.co/600x400",
-    title: "Fiera del Libro di Catania",
-    location: "Catania",
-    date: "12 Ottobre 2024",
-    category: "Cultura",
-  },
-  {
-    id: 8,
-    image: "https://placehold.co/600x400",
-    title: "Maratona di Palermo",
-    location: "Palermo",
-    date: "3 Novembre 2024",
-    category: "Sport",
-  },
-  {
-    id: 9,
-    image: "https://placehold.co/600x400",
-    title: "Sagra del Pistacchio di Bronte",
-    location: "Bronte",
-    date: "20 Agosto 2024",
-    category: "Enogastronomia",
-  },
-];
+import { events } from "@/data/events";
 
 const Index = () => {
   const [showMobileMap, setShowMobileMap] = useState(false);
@@ -129,7 +68,7 @@ const Index = () => {
           <div className="w-full lg:w-[60%]">
             <div className="mb-6">
               <h2 className="text-2xl font-bold text-foreground mb-2">
-                Esperienze da vivere
+                Eventi da vivere
               </h2>
               <p className="text-muted-foreground">
                 {filteredEvents.length} eventi disponibili

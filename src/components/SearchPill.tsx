@@ -132,7 +132,7 @@ export const SearchPill = ({ onSearch }: SearchPillProps) => {
         <Popover>
           <PopoverTrigger asChild>
             <button className="flex-1 flex flex-col items-start px-6 py-4 hover:bg-white/20 transition-colors">
-              <span className="text-xs font-semibold text-foreground">Esperienze</span>
+              <span className="text-xs font-semibold text-foreground">Eventi</span>
               <span className="text-sm text-muted-foreground">
                 {selectedCategory || "Sagre, Arte, Musica..."}
               </span>

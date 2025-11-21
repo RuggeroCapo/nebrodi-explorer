@@ -8,6 +8,7 @@ import Puntate from "./pages/Puntate";
 import Partners from "./pages/Partners";
 import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
+import EventDetail from "./pages/EventDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/partners" element={<Partners />} />
           <Route path="/news" element={<News />} />
           <Route path="/news/:id" element={<NewsDetail />} />
+          <Route path="/events/:id" element={<EventDetail />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

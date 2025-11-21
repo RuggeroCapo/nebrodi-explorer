@@ -1,8 +1,10 @@
 
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 
 interface EventCardProps {
+  id: number;
   image: string;
   title: string;
   location: string;
@@ -12,6 +14,7 @@ interface EventCardProps {
 }
 
 export const EventCard = ({
+  id,
   image,
   title,
   location,
@@ -20,7 +23,8 @@ export const EventCard = ({
   featured = false
 }: EventCardProps) => {
   return (
-    <Card className="group cursor-pointer overflow-hidden border-white/40 hover:border-white/60 hover:shadow-2xl transition-all duration-500 bg-white/60 backdrop-blur-xl rounded-[2rem]">
+    <Link to={`/events/${id}`}>
+      <Card className="group cursor-pointer overflow-hidden border-white/40 hover:border-white/60 hover:shadow-2xl transition-all duration-500 bg-white/60 backdrop-blur-xl rounded-[2rem]">
       <div className="p-3">
         <div className="relative aspect-[3/2] overflow-hidden rounded-[1.5rem] shadow-sm group-hover:shadow-md transition-all duration-500">
           <img
@@ -51,5 +55,6 @@ export const EventCard = ({
         </div>
       </div>
     </Card>
+    </Link>
   );
 };
