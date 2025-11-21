@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Header } from "@/components/Header";
 import { EventCard } from "@/components/EventCard";
 import { MapView } from "@/components/MapView";
+import { SearchPill } from "@/components/SearchPill";
 import { Button } from "@/components/ui/button";
 import { Map } from "lucide-react";
 import sagraImage from "@/assets/sagra-suino.jpg";
@@ -69,22 +70,27 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative h-[500px] overflow-hidden">
+      <section className="relative h-[600px] overflow-hidden">
         <img
           src={heroImage}
           alt="Nebrodi Mountains"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-          <div className="container mx-auto max-w-4xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
+        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/40 to-background/95" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
+          <div className="container mx-auto max-w-6xl text-center mb-8">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-card mb-6 drop-shadow-lg" style={{ textShadow: '2px 4px 8px rgba(0,0,0,0.3)' }}>
               Scopri i Monti Nebrodi
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
+            <p className="text-base md:text-lg text-card/90 max-w-2xl mx-auto drop-shadow-md">
               Eventi, sagre, trekking e cultura nel cuore verde della Sicilia
             </p>
           </div>
+        </div>
+        
+        {/* Search Pill positioned at bottom of hero */}
+        <div className="absolute bottom-8 left-0 right-0">
+          <SearchPill />
         </div>
       </section>
 
