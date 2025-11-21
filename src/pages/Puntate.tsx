@@ -48,21 +48,10 @@ const Puntate = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <main className="container mx-auto px-4 py-12">
+      <main className="container mx-auto px-4 pt-24 sm:pt-28 pb-12">
+        <h1 className="text-3xl font-bold mb-8">Puntate</h1>
+
         <div className="max-w-6xl mx-auto">
-          {/* Header */}
-          <div className="mb-12 text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
-              <Play className="w-8 h-8 text-primary" />
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Le Puntate
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Guarda le nostre puntate dedicate ai tesori nascosti dei Monti Nebrodi.
-              Storie, tradizioni e paesaggi mozzafiato.
-            </p>
-          </div>
 
           {/* Episodes Grid */}
           <div className="space-y-6">

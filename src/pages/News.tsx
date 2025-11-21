@@ -84,7 +84,7 @@ const News = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <main className="container mx-auto px-4 py-8 max-w-4xl">
+      <main className="container mx-auto px-4 pt-24 sm:pt-28 pb-8 max-w-4xl">
         {/* Simple Header */}
         <div className="mb-8 border-b pb-4">
           <h1 className="text-3xl font-bold mb-2">Nebrodi Tour News</h1>

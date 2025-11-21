@@ -33,7 +33,7 @@ const Partners = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <main className="container mx-auto px-4 py-12">
+      <main className="container mx-auto px-4 pt-24 sm:pt-28 pb-12">
         <h1 className="text-3xl font-bold mb-8">Partners</h1>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
